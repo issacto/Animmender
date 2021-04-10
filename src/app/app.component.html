@@ -1,0 +1,46 @@
+
+<style>
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  .main{
+    color: black;
+    background-color: red;
+    margin-top: 60px ;
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+
+<!-- Toolbar -->
+<div class="root" role="banner">
+  <div class ="header">
+    Hallo world
+  </div>
+  
+  <div class="main">
+    <router-outlet>
+    </router-outlet>
+  </div>
+</div>
+
+
+
+
+
