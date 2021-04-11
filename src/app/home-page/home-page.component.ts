@@ -7,26 +7,38 @@ import {HttpClient} from '@angular/common/http';
 })
 export class HomePageComponent implements OnInit {
   li:any;
-  lis=[];
+  lis=[]; 
+  names = [];
+  searchResult: Array<any> = [];
+  searchInput: String = '';
 
   constructor(private http : HttpClient) { 
     
   }
 
+  fetchSeries(event: any) {
+    if (event.target.value === '') {
+      return this.searchResult = [];
+    }
+    this.searchResult = this.names.filter((series) => {
+      return series.toLowerCase().startsWith(event.target.value.toLowerCase());
+      
+    }).slice(0,5)
+  }
+
   ngOnInit(): void {
-    let names = [];
     let data ='./assets/data/data.json'
     this.http.get(data)
     .subscribe(Response => {
       console.log("HIHIH")
-      // If response comes hideloader() function is called
-      // to hide that loader 
       if(Response){  
         hideloader();
       }
       Object.keys(Response).map(res=>{
-        names.push(Response[res].name)
+        this.names.push(Response[res].name)
+        
       }); 
+      console.log(this.names)
     });
     
     function hideloader(){
