@@ -7,10 +7,17 @@
     background-image: url(../../assets/images/main.png);
     background-color: rgba(0,0,0, 0.5);
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
   }
 
 
 .insideMain {
     position: relative;
-    color:black
+    background-color:rgb(9, 66, 23);
+    color:white;
+    font-size:4vh;
 }
