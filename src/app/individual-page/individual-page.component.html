@@ -1,3 +1,40 @@
-<div>
+<div  class = "main">
     
+    
+    <div class = "up">
+        <div class = "upLeft">
+          <h1>{{name}}</h1> 
+          <hr/>
+            <div class = "leftUpBox">
+              <div>
+                <img src="../../assets/images/logos/classified.svg"class="icon"/>
+                <p>Type: {{nameInfo.type}}</p>
+              </div>
+              <div>
+                <img src="../../assets/images/logos/review.svg" class="icon" />
+                <p>Rating: {{nameInfo.rating}}</p>
+              </div>
+              
+              <div>
+                <img src="../../assets/images/logos/route.svg" class="icon"/>
+                <p>Episodes: {{nameInfo.episodes}}</p>
+              </div>
+              
+             
+            </div>
+            <div class="leftDownBox">
+              <p>Genre: {{nameInfo.genre}}</p>
+            </div>
+        </div>
+        <div class = "upRight">
+          <h2>Ranking</h2><hr/>
+          <div class="rankingBox">
+            <div *ngFor="let ranking of rankings; let i = index">
+              <p>{{i+1 }}.{{"  "}} {{ranking.name}}</p>
+            </div>
+          </div>
+        </div>
+       
+    </div>
+    <div class = "bottom"><p>Recommendation</p></div>
 </div>

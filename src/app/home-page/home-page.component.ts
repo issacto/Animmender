@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
     this.searchResult = this.names.filter((series) => {
       return series.toLowerCase().startsWith(event.target.value.toLowerCase());
       
-    }).slice(0,5)
+    }).slice(0,30)
   }
 
   ngOnInit(): void {
@@ -38,7 +38,6 @@ export class HomePageComponent implements OnInit {
         this.names.push(Response[res].name)
         
       }); 
-      console.log(this.names)
     });
     
     function hideloader(){

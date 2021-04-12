@@ -4,7 +4,9 @@
     margin:0;
     padding:0;
   } 
-
+  .mainHeader{
+    color:white
+  }
   .header{
     top: 0;
     left: 0;
@@ -278,7 +280,10 @@
 <!-- Toolbar -->
 <div class="root" role="banner">
   <div class ="header">
-   <p class="mainHeader"> Anime Recommender</p>
+   <a href="/"> 
+    <p class="mainHeader"  style="display:inline"> Anime Recommender {{"  "}}</p>
+    <img src="../assets/images/logos/quality.svg" width="8%" style="display:inline"/>
+  </a>
   </div>
   
     <router-outlet>

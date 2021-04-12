@@ -1,16 +1,20 @@
 <div  class = "homeMain">
   
    <div class = "insideMain">
-       <span class="sr-only" id="loading">Loading...</span>
-      Search anime you enjoy watching!
-      <div class="bar">
-         <input type="text" #searchbar [(ngModel)]="searchInput" (keyup)="fetchSeries($event)" placeholder="Enter the name of your series" />
+      <div class="wordBox">
+         <span class="sr-only" id="loading">Loading...</span>
+         Search anime you enjoy watching!
+         <div class="bar">
+            <input type="text" #searchbar [(ngModel)]="searchInput" (keyup)="fetchSeries($event)" placeholder="Enter the name of your series" />
+         </div>
+         <div class="searchBox">
+            <ul>
+               <li *ngFor="let show of searchResult">
+                  <a [routerLink]="['/individualpage', show]"> <p>{{ show }}</p></a>
+               </li>
+            </ul>
+         </div>
       </div>
-      <ul>
-         <li *ngFor="let show of searchResult">
-            <p> {{ show }}</p>
-         </li>
-       </ul>
    </div>
 
 

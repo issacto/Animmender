@@ -5,7 +5,7 @@ import {IndividualPageComponent} from './individual-page/individual-page.compone
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'individualpage', component: IndividualPageComponent },
+  { path: 'individualpage/:id', component: IndividualPageComponent },
 ];
 
 @NgModule({
