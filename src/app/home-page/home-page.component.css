@@ -3,23 +3,21 @@
   position: relative;
   min-height:80vh;
   background-image: url(../../assets/images/main.png);
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgb(9, 66, 23,0.7);
   background-size: cover;
 
 }
 
 .insideMain {
-    padding:1%;
-    padding-top:2%;
     
     position: absolute;
     background-color:rgb(9, 66, 23,0.7);
     color:white;
     font-size:4vh;
-    min-height: 93.15%;
-    max-height: 93.15%;
+    min-height:80vh;
+    max-height: 80vh;
     left:0%;
-    width:98%;
+    width:100%;
 }
 .wordBox{
   top:40%;

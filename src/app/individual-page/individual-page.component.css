@@ -11,8 +11,8 @@
 }
 
 .up{
-    min-height: 80vh;
-    max-height: 80vh;
+    min-height: 85vh;
+    max-height: 85vh;
     max-width: 100%;
     min-width: 100%;
     display:flex;
@@ -21,8 +21,8 @@
 }
 
 .upLeft{
-    flex: 0 1 60%;
-    max-width: 60%;
+    flex: 0 1 70%;
+    max-width: 70%;
     background: rgb(90, 81, 170,0.3);
     padding: 3vh;
     justify-content: center;
@@ -32,8 +32,8 @@
 }
 
 .upRight{
-    flex: 0 1 40%;
-    max-width: 40%;
+    flex: 0 1 30%;
+    max-width: 30%;
     background: rgba(9, 67, 122, 0.4);
     padding: 4vh;
     padding-top: 3vh;
@@ -42,11 +42,18 @@
 }
 
 .bottom{
-    background: rgba(17, 47, 104, 0.4);
-    min-height:40vh
+    background: rgba(17, 47, 104, 0.7);
+    min-height:40vh;
+    padding:4vh;
+    justify-content: center;
+    text-align: center;
+}
+h1{
+    color:white;
+    font-size: 5vh;
 }
 
-h1,h2{
+h2,h3{
     color:white;
     font-size: 4vh;
 }
@@ -57,13 +64,21 @@ p{
 }
 
 .rankingBox{
-    background-color: rgba(5, 71, 49, 0.8);
+    background-color: rgba(23, 65, 40, 0.8);
     border-radius: 1vh;
     overflow-y: scroll;
     max-height: 84%;
     text-align: left;
     padding:1vh;
     padding-left:2vh
+}
+.bottomBox{
+    display:flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    padding:2vh;
+    background-color: rgba(53, 34, 12, 0.6);
+    margin-top: 2vh;
 }
 
 .leftUpBox{
@@ -72,21 +87,46 @@ p{
     justify-content: center;
     text-align: center;
     border: 2px solid white;
-    min-height: 25vh;
-    max-height: 25vh;
-    padding:5vh
+    padding:3vh
 }
 
 .leftDownBox{
-    min-height: 30vh;
-    max-height: 30vh;
+    min-height: 29vh;
+    max-height: 29vh;
     border: 2px solid white;
 
 }
 
 .icon{
-    width:60%;
-    background-color:rgb(184, 224, 199,0.2);
+    width:40%;
+    background-color:rgb(184, 224, 199,0.7);
     padding:1vh;
     border-radius: 2vh
 }
+
+
+.card{
+    display:flex;
+    min-width: 47.5vh;
+    justify-content: center;
+    padding:3vh;
+    padding-top: 15vh;
+    min-height: 25vh;
+    max-height: 25vh;
+    background-color: rgba(5, 71, 49, 0.9);
+    margin-right: 2vh;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+
+.recommendationHeader{
+    color: antiquewhite;
+    font-size: 3.4vh;
+}
+
+.recommendedGenre{
+    font-size: 2vh;
+    margin:0px
+}
+
