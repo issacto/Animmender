@@ -13,6 +13,7 @@ export class IndividualPageComponent implements OnInit {
   allInfo : any
   nameInfo : any
   rankings: any
+  recommendations:any
 
   constructor(private route: ActivatedRoute,private http : HttpClient) {
     this.nameInfo = "1234"
@@ -33,6 +34,7 @@ export class IndividualPageComponent implements OnInit {
       //console.log(this.allInfo);
       let jsonReturned = getAllInformationNeeded(this.allInfo,this.name);
       this.nameInfo = jsonReturned
+      this.recommendations = getRecommendations(this.nameInfo,this.allInfo);
     });
 
     function hideloader(){
@@ -51,6 +53,30 @@ export class IndividualPageComponent implements OnInit {
         }
       }
       return {}
+    }
+    function getRecommendations(selectedAnime,animes){
+      var returnArray =[]
+      for(var anime of animes ){
+        var similarValues= getSimilarValues(selectedAnime.genre,anime.genre)
+        if(similarValues>=2){
+          if(anime.name!=selectedAnime.name ){
+            returnArray.push([anime,similarValues])
+          }
+        }
+        returnArray.sort(function(a,b){return a[1] - b[1]});
+        returnArray.reverse();
+
+      }
+      return returnArray.slice(0,100)
+    }
+    function getSimilarValues(selectedAnimeGenres,animeGenres){
+      var i = 0;
+      for(var genre of selectedAnimeGenres){
+        if(animeGenres.includes(genre)){
+          i+=1;
+        }
+      }
+      return i 
     }
   }
 

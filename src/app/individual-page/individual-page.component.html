@@ -30,11 +30,16 @@
           <h2>Ranking</h2><hr/>
           <div class="rankingBox">
             <div *ngFor="let ranking of rankings; let i = index">
-              <p>{{i+1 }}.{{"  "}} {{ranking.name}}</p>
+              <p>{{i+1 }}.{{"  "}} {{ranking.name}} {{ranking.rating}}</p>
             </div>
           </div>
         </div>
        
     </div>
-    <div class = "bottom"><p>Recommendation</p></div>
+    <div class = "bottom">
+      <p>Recommendation</p>
+      <div *ngFor="let anime of recommendations; let i = index">
+        <p>{{i+1 }}.{{"  "}} {{anime[0].name}} {{anime[1]}}</p>
+      </div>
+    </div>
 </div>

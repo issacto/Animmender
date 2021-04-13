@@ -31,18 +31,18 @@ export class HomePageComponent implements OnInit {
     this.http.get(data)
     .subscribe(Response => {
       console.log("HIHIH")
-      if(Response){  
+      /*if(Response){  
         hideloader();
-      }
+      }*/
       Object.keys(Response).map(res=>{
         this.names.push(Response[res].name)
         
       }); 
     });
-    
+    /*
     function hideloader(){
       document.getElementById('loading').style.display = 'none';
-    }
+    }*/
   }
   
 
