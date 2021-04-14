@@ -1,7 +1,7 @@
 
 .homeMain {
   position: relative;
-  min-height:80vh;
+  min-height:76vh;
   background-image: url(../../assets/images/main.png);
   background-color: rgb(9, 66, 23,0.7);
   background-size: cover;
@@ -14,8 +14,7 @@
     background-color:rgb(9, 66, 23,0.7);
     color:white;
     font-size:4vh;
-    min-height:80vh;
-    max-height: 80vh;
+    min-height:76vh;
     left:0%;
     width:100%;
 }

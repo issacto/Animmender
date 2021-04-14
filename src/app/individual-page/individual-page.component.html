@@ -8,31 +8,44 @@
             <div class = "leftUpBox">
               <div>
                 <img src="../../assets/images/logos/classified.svg"class="icon"/>
-                <p>Type: {{nameInfo.type}}</p>
+                <div class="letters">
+                  <p class="normalLetters">Type: </p>
+                  <p class="boldLetters">{{nameInfo.type}}</p>
+              </div>
               </div>
               <div>
                 <img src="../../assets/images/logos/review.svg" class="icon" />
-                <p>Rating: {{nameInfo.rating}}</p>
+                <div class="letters">
+                    <p class="normalLetters">Rating: </p>
+                    <p class="boldLetters" style="font-size: 4vh;">{{nameInfo.rating}}</p>
+                </div>
               </div>
               
               <div>
                 <img src="../../assets/images/logos/route.svg" class="icon"/>
-                <p>Episodes: {{nameInfo.episodes}}</p>
+                <div class="letters">
+                  <p class="normalLetters">Episodes: </p>
+                  <p class="boldLetters">{{nameInfo.episodes}}</p>
+                </div>
               </div>
               
              
             </div>
             <div class="leftDownBox">
-              <p>Genre: {{nameInfo.genre}}</p>
+                <div *ngFor="let genre of nameInfo.genre; let i = index">
+                  <div class="circle">
+                    {{genre}}
+                  </div>
+                </div>
             </div>
         </div>
         <div class = "upRight">
-          <h2 style="display:inline">Ranking</h2>
+          <h2 style="display:inline">Ranking </h2>
           <img src="../../assets/images/logos/ranking.svg" style="display:inline" width="30vh" />
           <hr style="margin-bottom: 3vh;"/>
           <div class="rankingBox">
             <div *ngFor="let ranking of rankings; let i = index">
-              <p>{{i+1 }}.{{"  "}}  {{ranking.name}} ({{ranking.rating}})</p>
+              <p (click)="navigate(ranking.name)">{{i+1 }}.{{"  "}}  {{ranking.name}} ({{ranking.rating}})</p>
             </div>
           </div>
         </div>
@@ -40,17 +53,17 @@
     </div>
     <div class = "bottom">
       <h3 style="display:inline">Recommendation {{"  "}}</h3>
+      
       <img src="../../assets/images/logos/list.svg" style="display:inline" width ="30vh"/>
+      <hr/>
       <div class = "bottomBox">
         <div *ngFor="let anime of recommendations; let i = index" >
-          <a [routerLink]="['/individualpage', anime[0].name]"> 
-            <div class = "card"> 
-              <p class="recommendationHeader">{{i+1 }}.{{"  "}} {{anime[0].name}} </p>
+            <div class = "card" (click) = "navigate( anime[0].name)"> 
+              <p class="recommendationHeader">{{i+1 }}.{{"  "}} {{anime[0].name}} - {{anime[0].rating}}  </p>
               <div *ngFor="let genre of anime[0].genre">
                 <p class="recommendedGenre">{{genre}}</p>
               </div>
             </div>
-            </a>
         </div>
     </div>
     </div>

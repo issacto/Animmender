@@ -1,6 +1,6 @@
 .main {
     position: relative;
-    min-height:120vh;
+    max-height:100vh;
     background-image: url(../../assets/images/individual.jpg);
     background-color: rgba(0,0,0, 0.5);
     background-size: cover;
@@ -11,8 +11,8 @@
 }
 
 .up{
-    min-height: 85vh;
-    max-height: 85vh;
+    min-height: 55vh;
+    max-height: 55vh;
     max-width: 100%;
     min-width: 100%;
     display:flex;
@@ -23,8 +23,9 @@
 .upLeft{
     flex: 0 1 70%;
     max-width: 70%;
-    background: rgb(90, 81, 170,0.3);
-    padding: 3vh;
+    background: rgba(24, 18, 82, 0.3);
+    padding: 4vh;
+    padding-top: 2vh;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -34,7 +35,7 @@
 .upRight{
     flex: 0 1 30%;
     max-width: 30%;
-    background: rgba(9, 67, 122, 0.4);
+    background: rgba(29, 106, 179, 0.4);
     padding: 4vh;
     padding-top: 3vh;
    
@@ -42,20 +43,22 @@
 }
 
 .bottom{
-    background: rgba(17, 47, 104, 0.7);
-    min-height:40vh;
+    background: rgba(4, 29, 77, 0.8);
+    min-height:auto;
+    max-height:auto;
     padding:4vh;
     justify-content: center;
     text-align: center;
 }
 h1{
     color:white;
-    font-size: 5vh;
+    font-size: 3.6vh;
 }
 
 h2,h3{
-    color:white;
-    font-size: 4vh;
+    color:rgba(255, 255, 255);
+    padding:0.5vh;
+    font-size: 3.3vh;
 }
 
 p{
@@ -76,7 +79,7 @@ p{
     display:flex;
     flex-direction: row;
     overflow-x: scroll;
-    padding:2vh;
+    padding:2.2vh;
     background-color: rgba(53, 34, 12, 0.6);
     margin-top: 2vh;
 }
@@ -91,14 +94,21 @@ p{
 }
 
 .leftDownBox{
-    min-height: 29vh;
-    max-height: 29vh;
+    min-height: 10vh;
+    max-height: 10vh;
     border: 2px solid white;
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding:2vh
 
 }
 
 .icon{
-    width:40%;
+    width:26%;
     background-color:rgb(184, 224, 199,0.7);
     padding:1vh;
     border-radius: 2vh
@@ -107,12 +117,12 @@ p{
 
 .card{
     display:flex;
-    min-width: 47.5vh;
+    min-width: 40.5vh;
     justify-content: center;
     padding:3vh;
-    padding-top: 15vh;
-    min-height: 25vh;
-    max-height: 25vh;
+    padding-top: 12vh;
+    min-height: 10vh;
+    max-height: 10vh;
     background-color: rgba(5, 71, 49, 0.9);
     margin-right: 2vh;
     flex-direction: column;
@@ -122,11 +132,40 @@ p{
 
 .recommendationHeader{
     color: antiquewhite;
-    font-size: 3.4vh;
+    font-size: 2.7vh;
+    font-weight: bold;
 }
 
 .recommendedGenre{
     font-size: 2vh;
     margin:0px
+}
+
+.circle{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 2vh;
+    background-color: rgb(10, 95, 21);
+    font-size: 3vh;
+    color:azure;
+    padding:1vh;
+    border-radius: 1vh;
+    width:auto
+}
+
+.letters{
+    margin-top: 2vh;
+}
+.boldLetters{
+    display:inline;
+    font-size: 3vh ;
+    font-weight: bold;
+    color:rgb(13, 139, 13)
+}
+.normalLetters{
+    display:inline;
+    font-size: 2vh ;
 }
 
