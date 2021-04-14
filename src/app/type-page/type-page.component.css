@@ -1,7 +1,7 @@
 .main {
     position: relative;
     min-height:75vh;
-    background-image: url(../../assets/images/individual.jpg);
+    background-image: url(../../assets/images/type.jpg);
     background-color: rgba(0,0,0, 0.5);
     background-size: cover;
     display:flex;
@@ -12,7 +12,7 @@
 }
 
 h1{
-    color:white;
+    color:black;
     font-size: 5vh;
 }
 
@@ -33,5 +33,5 @@ table thead{
 }
 
 table tbody tr{
-    background-color:rgb(8, 66, 32,0.5);
+    background-color:rgba(4, 43, 20, 0.9);
 }
