@@ -1,7 +1,11 @@
 <div  class = "main">
-    
-    
+  <div *ngIf="isReady" class="middle">
+
+    <div class="spinner"></div>
+    <br/>
+  </div>
     <div class = "up">
+        
         <div class = "upLeft">
           <h1>{{name}}</h1> 
           <hr />
@@ -17,7 +21,8 @@
                 <img src="../../assets/images/logos/review.svg" class="icon" />
                 <div class="letters">
                     <p class="normalLetters">Rating: </p>
-                    <p class="boldLetters" style="font-size: 4vh;">{{nameInfo.rating}}</p>
+                    
+                    <p class="boldLetters" style="font-size: 4vh;">{{nameInfo.rating || "NA"}}</p>
                 </div>
               </div>
               
@@ -25,7 +30,7 @@
                 <img src="../../assets/images/logos/route.svg" class="icon"/>
                 <div class="letters">
                   <p class="normalLetters">Episodes: </p>
-                  <p class="boldLetters">{{nameInfo.episodes}}</p>
+                  <p class="boldLetters">{{nameInfo.episodes || "NA"}}</p>
                 </div>
               </div>
               
@@ -33,9 +38,11 @@
             </div>
             <div class="leftDownBox">
                 <div *ngFor="let genre of nameInfo.genre; let i = index">
-                  <div class="circle">
-                    {{genre}}
-                  </div>
+                  <a [routerLink]="['/typepagecomponent',genre]">
+                    <div class="circle">
+                      {{genre}}
+                    </div>
+                  </a>
                 </div>
             </div>
         </div>
@@ -43,10 +50,15 @@
           <h2 style="display:inline">Ranking </h2>
           <img src="../../assets/images/logos/ranking.svg" style="display:inline" width="30vh" />
           <hr style="margin-bottom: 3vh;"/>
-          <div class="rankingBox">
-            <div *ngFor="let ranking of rankings; let i = index">
-              <p (click)="navigate(ranking.name)">{{i+1 }}.{{"  "}}  {{ranking.name}} ({{ranking.rating}})</p>
-            </div>
+            <div class="rankingBox">
+              <div *ngFor="let ranking of rankings; let i = index">
+                <a [routerLink]="['/individualpage', ranking.name]"
+                routerLinkActive="on"
+                [routerLinkActiveOptions]="{ exact: false, __change_detection_hack__: name }" 
+                > 
+                  <p >{{i+1 }}.{{"  "}}  {{ranking.name}} ({{ranking.rating || "NA"}})</p>
+                </a>
+              </div>
           </div>
         </div>
        
@@ -58,12 +70,15 @@
       <hr/>
       <div class = "bottomBox">
         <div *ngFor="let anime of recommendations; let i = index" >
-            <div class = "card" (click) = "navigate( anime[0].name)"> 
-              <p class="recommendationHeader">{{i+1 }}.{{"  "}} {{anime[0].name}} - {{anime[0].rating}}  </p>
+          <a [routerLink]="['/individualpage', anime[0].name]" > 
+            <div class = "card" > 
+              <p class="recommendationHeader"  style="display:inline">{{i+1 }}.{{"  "}} {{anime[0].name}} - {{anime[0].rating || "NA"}}  </p>
+              <!--
               <div *ngFor="let genre of anime[0].genre">
                 <p class="recommendedGenre">{{genre}}</p>
-              </div>
+              </div>-->
             </div>
+          </a>
         </div>
     </div>
     </div>

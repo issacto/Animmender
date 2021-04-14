@@ -100,9 +100,9 @@ p{
     display:flex;
     flex-direction: row;
     text-align: center;
-    justify-content: center;
     align-items: center;
-    overflow-x: auto;
+    justify-content:flex-start;
+    overflow-x: scroll;
     padding:2vh
 
 }
@@ -120,7 +120,6 @@ p{
     min-width: 40.5vh;
     justify-content: center;
     padding:3vh;
-    padding-top: 12vh;
     min-height: 10vh;
     max-height: 10vh;
     background-color: rgba(5, 71, 49, 0.9);
@@ -128,7 +127,9 @@ p{
     flex-direction: column;
     overflow-y: scroll;
 }
-
+a {
+    text-decoration: none
+}
 
 .recommendationHeader{
     color: antiquewhite;
@@ -169,3 +170,31 @@ p{
     font-size: 2vh ;
 }
 
+
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  width: 10vh;
+  height: 10vh;
+  position: fixed;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
+
+.middle{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+
+}

@@ -1,0 +1,37 @@
+.main {
+    position: relative;
+    min-height:75vh;
+    background-image: url(../../assets/images/individual.jpg);
+    background-color: rgba(0,0,0, 0.5);
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    color:aliceblue;
+    padding:3vh;
+    text-align: center;
+}
+
+h1{
+    color:white;
+    font-size: 5vh;
+}
+
+.tableContainer{
+    display:flex;
+    justify-content: center;
+    max-height: 65vh;
+    overflow-y: scroll;
+}
+
+table{
+    font-size: 3vh;
+}
+
+table thead{
+    font-size: 4vh;
+    padding: 2vh;
+}
+
+table tbody tr{
+    background-color:rgb(8, 66, 32,0.5);
+}

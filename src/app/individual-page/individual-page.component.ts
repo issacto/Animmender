@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -15,13 +15,20 @@ export class IndividualPageComponent implements OnInit {
   nameInfo : any
   rankings: any
   recommendations:any
+  isReady= true
 
   constructor(private route: ActivatedRoute,private router: Router,private http : HttpClient) {
-    this.nameInfo = "1234"
-    route.params.subscribe(val => {
-      
+
+    this.isReady= true
+  }
+   
+
+  ngOnInit(): void {
+    
+    this.route.params.subscribe(val => {
+        console.log("Hi mother")
+       
         this.name = this.route.snapshot.paramMap.get('id')
-        
         console.log("HEHEHE",this.name)
         let data ='./assets/data/data.json'
         this.http.get(data).toPromise().then(Response => {
@@ -34,6 +41,8 @@ export class IndividualPageComponent implements OnInit {
           let jsonReturned = getAllInformationNeeded(this.allInfo,this.name);
           this.nameInfo = jsonReturned
           this.recommendations = getRecommendations(this.nameInfo,this.allInfo);
+          console.log("isready",this.isReady)
+          this.isReady=false
         });
     
         function hideloader(){
@@ -80,20 +89,14 @@ export class IndividualPageComponent implements OnInit {
           }
           return i 
         }
-
-
-
-      
+       
     })
     
    }
-   
-
-  ngOnInit(): void {}
+   setIsNoReady(){
+     this.isReady=true
+     console.log("not ready",this.isReady)
+   }
   
-  navigate(name){
-    this.router.navigateByUrl('/individualpage/'+name);
-
-  }
 
 }

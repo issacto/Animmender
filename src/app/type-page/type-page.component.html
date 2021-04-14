@@ -1,0 +1,23 @@
+<div  class = "main">
+    <h1>{{genres}}</h1>
+    <div class="tableContainer">
+        <table mdbTable>
+            <thead class="thead">
+              <tr style="margin-bottom:2vh;">
+                <th style="background-color: rgb(7, 59, 7,0.01);"> </th>
+                <th style="background-color: rgb(7, 59, 7);">Name</th>
+                <th style="background-color: rgb(7, 59, 7);">Rating</th>
+                <th style="background-color: rgb(7, 59, 7);">Genres</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr mdbTableCol *ngFor="let anime of requiredInfo;let i = index" (click)="navigate(anime.name)">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{anime.name}}</td>
+                    <td>{{anime.rating}}</td>
+                    <td>{{anime.genre}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

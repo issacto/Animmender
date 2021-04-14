@@ -8,13 +8,15 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { IndividualPageComponent } from './individual-page/individual-page.component';
 import { FormsModule } from "@angular/forms";
 import { FooterComponent } from './components/footer/footer.component';
+import { TypePageComponent } from './type-page/type-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     IndividualPageComponent,
-    FooterComponent
+    FooterComponent,
+    TypePageComponent
   ],
   imports: [
     BrowserModule,
