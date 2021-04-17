@@ -99,7 +99,7 @@ export class IndividualPageComponent implements OnInit {
    }
    navigate(name){
     this.router.navigate(['/individualpage',name]);
-    location.reload();
+     window.location.reload();
    }
   
 
