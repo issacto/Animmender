@@ -98,8 +98,8 @@ export class IndividualPageComponent implements OnInit {
      console.log("not ready",this.isReady)
    }
    navigate(name){
-    this.router.navigate(['/individualpage',name]);
-     window.location.reload();
+    this.router.navigate(['/individualpage',name]).then(()=>window.location.reload());
+
    }
   
 
