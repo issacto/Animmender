@@ -12,7 +12,9 @@ export class TypePageComponent implements OnInit {
   allInfo : any;
   requiredInfo: any;
   genres : any;
-  constructor(private route: ActivatedRoute,private router: Router,private http : HttpClient) { }
+  constructor(private route: ActivatedRoute,private router: Router,private http : HttpClient) { 
+    
+  }
 
   ngOnInit(): void {
     this.genres = this.route.snapshot.paramMap.get('id')
