@@ -97,6 +97,10 @@ export class IndividualPageComponent implements OnInit {
      this.isReady=true
      console.log("not ready",this.isReady)
    }
+   navigate(name){
+    this.router.navigate(['/individualpage',name]);
+    window.location.reload();
+   }
   
 
 }

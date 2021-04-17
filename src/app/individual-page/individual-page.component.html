@@ -52,12 +52,10 @@
           <hr style="margin-bottom: 3vh;"/>
             <div class="rankingBox">
               <div *ngFor="let ranking of rankings; let i = index">
-                <a [routerLink]="['/individualpage', ranking.name]"
-                routerLinkActive="on"
-                [routerLinkActiveOptions]="{ exact: false, __change_detection_hack__: name }" 
+                <div (click) ="navigate(ranking.name)"
                 > 
                   <p >{{i+1 }}.{{"  "}}  {{ranking.name}} ({{ranking.rating || "NA"}})</p>
-                </a>
+                </div>
               </div>
           </div>
         </div>
@@ -70,7 +68,7 @@
       <hr/>
       <div class = "bottomBox">
         <div *ngFor="let anime of recommendations; let i = index" >
-          <a [routerLink]="['/individualpage', anime[0].name]" > 
+          <div (click)="navigate(anime[0].name)" > 
             <div class = "card" > 
               <p class="recommendationHeader"  style="display:inline">{{i+1 }}.{{"  "}} {{anime[0].name}} - {{anime[0].rating || "NA"}}  </p>
               <!--
@@ -78,7 +76,7 @@
                 <p class="recommendedGenre">{{genre}}</p>
               </div>-->
             </div>
-          </a>
+          </div>
         </div>
     </div>
     </div>
